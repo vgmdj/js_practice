@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image</title>
+    <base target="_blank">
+</head>
+<body>
+<a href="http://www.baidu.com" title="转到百度">
+    <img src="http://photo.16pic.com/00/21/58/16pic_2158447_b.jpg" id="arrow1">
+</a>
+
+<div>
+   <a title="轮播图">
+       <img src="nodefault.png" id="rotate">
+   </a>
+
+</div>
+
+
+
+<script>
+    window.onload = rollOverInit;
+
+    var pics = new Array("http://photo.16pic.com/00/21/58/16pic_2158447_b.jpg",
+            "http://photo.16pic.com/00/70/44/16pic_7044582_b.png",
+            "http://photo.16pic.com/00/66/95/16pic_6695749_b.png");
+    var images = new Array();
+    var who = 0;
+    
+    function rollOverInit() {
+        for (let i = 0; i< document.images.length; i++){
+            if ((document.images[i].parentNode.tagName == "A") && (document.images[i].id != "rotate") ){
+                setupRollOver(document.images[i]);
+            }
+        }
+
+        for (let i = 0; i < pics.length; i ++){
+            let img = new Image();
+            img.src = pics[i];
+            images.push(img);
+        }
+
+        setupRotate()
+    }
+
+    function setupRollOver(thisImage) {
+        thisImage.outImage = new Image();
+        thisImage.outImage.src = thisImage.src;
+        thisImage.onmouseout = function () {
+            this.src = this.outImage.src;
+        };
+
+        thisImage.clickImage = new Image();
+        thisImage.clickImage.src = "http://photo.16pic.com/00/70/44/16pic_7044582_b.png";
+        thisImage.onclick = function() {
+            this.src = this.clickImage.src;
+        };
+
+        thisImage.overImage = new Image();
+        thisImage.overImage.src = "http://photo.16pic.com/00/66/95/16pic_6695749_b.png";
+        thisImage.onmouseover = function () {
+            this.src = this.overImage.src;
+        };
+    }
+
+    function setupRotate() {
+        thisImage = document.getElementById("rotate")
+
+        if (who == images.length){
+            who = 0;
+        }
+
+        thisImage.parentNode.href = pics[who];
+        thisImage.parentNode.title = pics[who];
+        thisImage.src = images[who++].src;
+
+
+        setTimeout(setupRotate,1000*3)
+
+    }
+    
+    
+</script>
+
+</body>
+</html>

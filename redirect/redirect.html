@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirect</title>
+</head>
+<body>
+    <div>
+        <a href="http://www.baidu.com" id="redirect">this is a redirect link</a><br>
+        <a href="/" id="custom">自定义链接跳转</a>
+
+
+    </div>
+
+    <div>
+        <input type="button" id="google" value="google">
+        <input type="button" id="baidu" value="baidu">
+        <input type="button" id="bing" value="bing">
+    </div>
+
+
+
+
+    <script>
+        window.onload = initAll;
+
+        function initAll(){
+            document.getElementById("redirect").onclick = initRedirect;
+            document.getElementById("redirect").title = "跳转到 bing";
+
+            document.getElementById("custom").onclick = initCustom;
+            document.getElementById("custom").title = "自定义跳转";
+
+            document.getElementById("google").onclick = buttonClick;
+            document.getElementById("baidu").onclick = buttonClick;
+            document.getElementById("bing").onclick = buttonClick;
+        }
+
+        function initRedirect() {
+            window.location =   "https://cn.bing.com/";
+
+            //return false 表示不再响应对用户点击事件的处理，截断href 里的链接
+            return false;
+        }
+
+        function initCustom(){
+            let ans = prompt("请输入跳转链接地址：");
+
+            if (ans){
+                window.location = ans;
+                return false
+
+            }else{
+                document.getElementById("custom").href  = "https://google.cn"
+            }
+
+        }
+
+        function buttonClick() {
+            switch (this.id){
+                case "google":
+                    window.location = "https://google.cn";
+                    break;
+
+                case "baidu":
+                    window.location = "http://www.baidu.com";
+                    break;
+
+                case "bing":
+                    window.location = "https://cn.bing.com";
+                    break;
+
+                default:
+                    window.location = "http://360.com";
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+</html>
