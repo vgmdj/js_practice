@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <script src="form.js"></script>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div>
+    <form action="https://www.baidu.com/s" method="get" class="centered" id="form" >
+
+
+        <label for="select">请选择展示内容</label>
+        <select name="wd" id="select">
+            <option value="百度">百度</option>
+            <option value="bing">bing</option>
+            <option value="google">google</option>
+        </select>
+        <p>
+            <input type="submit" value="Submit">&nbsp; <input type="reset" value="reset">
+
+        </p>
+    </form>
+    </div>
+
+    <hr>
+    
+    <div>
+        <form action="https://cn.bing.com/search" method="get" class="centered" id="form2">
+           <p> <label for="username">username: <input type="text" id="username" class="normal" name="q"></label></p>
+            <p><label for="password">password: <input type="text" id="password" class="normal" name="password"></label></p>
+            <p><label for="verify">verify : <input type="text" id="verify" class="normal" name="verify"></label></p>
+
+            <p><input type="submit" value="Submit"> &nbsp; <input type="reset" value="Reset"></p>
+        </form>
+    </div>
+
+
+    <iframe src="#" name="ifm"  id="ifm" height="350px" width="100%" >iframe</iframe>
+</body>
+</html>
