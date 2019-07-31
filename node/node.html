@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node</title>
+    <script src="node.js"></script>
+</head>
+<body>
+    <form action="#" id="changeText">
+        <label for="textarea">文本输入框：</label>
+        <p>
+            <textarea id="textarea" cols="80" rows="20"></textarea>
+        </p>
+        <div>
+            <p>
+                <label><input type="radio" name="nodeAction">add a new paragraph to bottom</label>
+                <label><input type="radio" name="nodeAction">insert a new paragraph before the selected</label>
+            </p>
+            <p>
+                <label><input type="radio" name="nodeAction">delete the selected paragraph</label>
+                <label><input type="radio" name="nodeAction">replace the selected paragraph</label>
+            </p>
+        </div>
+        <div>
+            <label for="selected">Paragraph: #</label>
+            <select name="selected" id="selected">&nbsp;</select>
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+        </div>
+
+        <div id="modifiable">&nbsp;</div>
+
+    </form>
+</body>
+</html>
