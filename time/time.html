@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time</title>
+    <script src="time.js"></script>
+</head>
+<body>
+    <div>
+        <label for="year">年份：</label>
+        <input type="text" name="time" id="year" placeholder="2019">
+
+        <label for="month">月份：</label>
+        <input type="text" name="time" id="month" placeholder="1">
+
+        <label for="day">天数：</label>
+        <input type="text" name="time" id="day" placeholder="1">
+    </div>
+
+    <hr>
+
+    <div>
+        <label><input type="radio" name="actions">显示当前时间</label>
+        <label><input type="radio" name="actions">计算时间差</label>
+        <label><input type="radio" name="actions">持续倒计时</label>
+    </div>
+
+    <hr>
+
+    <input type="button" value="提交" id="submit">
+    <input type="button" value="重置" id="reset">
+
+    <hr>
+
+    <div id="modifiable">
+        <p>&nbsp;</p>
+
+    </div>
+
+</body>
+</html>
